@@ -36,7 +36,7 @@ M_bayes <- brm(y ~ x_1 + x_2, data = Df)
 # Overriding defaults
 M_bayes <- brm(y ~ x_1 + x_2, 
                data = Df,
-               cores = 2, # I have a dual-core
+               cores = 16, # I have a dual-core
                chains = 4, # 4 chains is typical
                iter = 2500,
                warmup = 1000, # these are initilization etc iterations
