@@ -4,14 +4,16 @@
 # Install "prior exposure" package (if possible) --------------------------
 
 # Usually no need to update your packages if/when asked at this stage
-devtools::install_git("https://github.com/mark-andrews/fbda01.git", 
-                      subdir = "priorexposure")
+
+## devtools::install_git("https://github.com/mark-andrews/fbda01.git", 
+##                       subdir = "priorexposure")
+
 library(priorexposure)
 
 # If any problems occurred above, then you can just "source" the relevant file
 # which is on GitHub
 
-source("https://raw.githubusercontent.com/mark-andrews/fbda01/master/priorexposure/R/bernoulli_models.R")
+# source("https://raw.githubusercontent.com/mark-andrews/fbda01/master/priorexposure/R/bernoulli_models.R")
 
 
 # Plot a likelihood function ----------------------------------------------
