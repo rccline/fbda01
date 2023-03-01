@@ -1,0 +1,37 @@
+---
+title: "How to use RStan"
+format: html
+editor: visual
+---
+
+##  [How to use RStan](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started)  
+
+### Loading the package  
+* observe the startup message  
+
+```{r}
+library("rstan") # observe startup messages
+```
+
+```{r}
+ls("package:rstan")
+```
+
+As the startup message says, if you are using rstan locally on a multicore machine and have plenty of RAM to estimate your model in parallel, at this point execute:
+
+`rstan_options(auto_write = TRUE)` allows you to automatically save a bare version of a compiled Stan program to the hard disk so that it does not need to be recompiled (unless you change it). You will need to run these commands each time you load the rstan library.
+
+```{r}
+options(mc.cores = parallel::detectCores())  
+rstan_options(auto_write = TRUE)
+```
+
+Finally, if you use Windows, there will be a third startup message saying not to use --march=native compiler flag. You can ignore this warning if you followed the steps above and your Makevars.win file does not contain this flag. 
+
+### Example 1:  Eight Schools  
+
+This is an example in Section 5.5 of Gelman et al (2003), which studied coaching effects from eight schools. For simplicity, we call this example "eight schools."
+
+1. We start by writing a Stan program for the model in a text file. If you are using RStudio version 1.2.x or greater, click on File -> New File -> Stan File . Otherwise, open your favorite text editor. Either way, paste in the following and save your work to a file called schools.stan in R's working directory (which can be seen by executing getwd())  
+
+

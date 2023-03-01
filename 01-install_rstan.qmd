@@ -1,0 +1,82 @@
+---
+title: "Rstan"
+format: html
+editor: visual
+---
+
+## [RStan Getting Started](https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started) 
+
+### Remove previous installations of rstan
+
+```{r}
+#| eval: false  
+#| echo: true
+ 
+# remove.packages(c("StanHeaders", "rstan"))
+# if (file.exists(".RData")) file.remove(".RData")
+
+```
+### Configuring C++ Toolchain 
+
+Prior to installing RStan, you need to configure your R installation to be able to compile C++ code. Follow the link below for your respective operating system for more instructions:
+
+* [RTools42 Installation](https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html)  
+* [RTools42 Installer - click here](https://cran.r-project.org/bin/windows/Rtools/rtools42/files/rtools42-5355-5357.exe)  
+* Path:  `C:\ProgramData\Microsoft\Windows\Start Menu\Program\Rtools 4.2\`  
+* Path2:  `C:\Users\Robert\AppData\Roaming\Microsoft\Windows\Recent`  
+
+* RTools4 Installation  
+
+
+* install.packages("StanHeaders", repos = c("https://mc-stan.org/r-packages/", getOption("repos")))
+install.packages("rstan", repos = c("https://mc-stan.org/r-packages/", getOption("repos")))
+
+* Verify that Rtools is being found:  
+`Sys.which("make")`
+
+## "C:\\rtools40\\usr\\bin\\make.exe" 
+
+### Install packages from source
+
+install.packages("jsonlite", type = "source")
+
+### Verify c++ compiler  
+
+* From Terminal run:  g++ --version  
+
+
+
+### Install the preview of `rstan` 2.26 using:  
+
+```{r}
+# install.packages("StanHeaders", repos = c("https://mc-stan.org/r-packages/", getOption("repos")))
+# install.packages("rstan", repos = c("https://mc-stan.org/r-packages/", getOption("repos")))
+
+
+```
+
+
+### Latest Development Version 2.26X (unrelased)
+
+```{r}
+
+#| eval: false
+#| echo: true 
+
+
+# run the next line if you already have rstan installed
+# remove.packages(c("StanHeaders", "rstan"))
+
+# install.packages("rstan", repos = c("https://mc-stan.org/r-packages/", getOption("repos")))
+
+
+```
+
+The downloaded binary packages are in
+	`C:\Users\Robert\AppData\Local\Temp\Rtmp6joOih\downloaded_packages`
+
+### Verify RStan 
+
+```{r}
+example(stan_model, package = "rstan", run.dontrun = TRUE)
+```

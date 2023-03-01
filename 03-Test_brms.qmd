@@ -1,0 +1,32 @@
+---
+title: "brms"
+format: html
+editor: visual
+---
+
+##  Test brms (c.f. Mark Andrews fbda01)  
+
+```{r}
+library(tidyverse)
+library(brms)
+
+data_df <- tibble(x = rnorm(10))
+
+M <- brm(x ~ 1, data = data_df)
+```
+
+
+### priorexposure  
+
+The`*priorexposure*` package is a small ad hoc package just for this tutorial. It is available on GutHub and can be installed as follows using *devtools*: 
+
+```{r}
+devtools::install_git("https://github.com/mark-andrews/fbda01.git", subdir = "priorexposure")
+```
+
+### Restart R and check that Rtools is working:  
+
+```{r}
+pkgbuild::has_build_tools(debug = TRUE)
+```
+
